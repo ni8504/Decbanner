@@ -26,10 +26,13 @@
     .banner-container {
       position: relative;
       width: 100%;
-      height: 100vh; /* Full viewport height */
+      min-height: 100vh; /* Changed from height to min-height */
       overflow: hidden;
       color: #fff;
       text-align: center;
+      display: flex; /* Added flex display */
+      align-items: center; /* Vertically centers content */
+      justify-content: center; /* Horizontally centers content */
     }
 
     /* Background Image */
@@ -84,10 +87,8 @@
       position: relative;
       z-index: 2;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
+      max-width: 800px;
+      width: 100%;
     }
 
     /* Main Message */
@@ -96,6 +97,7 @@
       margin-bottom: 0.5em;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
       padding: 0 20px;
+      word-wrap: break-word;
     }
 
     /* Highlights */
@@ -124,31 +126,32 @@
       cursor: default;
       text-decoration: none;
       box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      margin-bottom: 20px;
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
       .main-message {
-        font-size: 2.5em;
+        font-size: 2em; /* Reduced font size */
       }
       .highlights {
-        font-size: 1.3em;
+        font-size: 1.2em; /* Reduced font size */
       }
       .cta-button {
-        font-size: 1.1em;
+        font-size: 1em; /* Reduced font size */
         padding: 12px 25px;
       }
     }
 
     @media (max-width: 480px) {
       .main-message {
-        font-size: 2em;
+        font-size: 1.5em; /* Further reduced font size */
       }
       .highlights {
-        font-size: 1.1em;
+        font-size: 1em; /* Further reduced font size */
       }
       .cta-button {
-        font-size: 1em;
+        font-size: 0.9em; /* Further reduced font size */
         padding: 10px 20px;
       }
     }
@@ -166,14 +169,14 @@
 
     <!-- Content -->
     <div class="banner-content">
-      <div class="main-message">Make The Holidays Healthier with FitClub!</div>
+      <div class="main-message">Make This Holiday Season Healthier with FitClub!</div>
       <div class="highlights">
         <div>🎁 Join Now and Start Your Fitness Journey</div>
         <div>🏆 Voted <strong>Best in Springfield</strong></div>
         <div>❤️ Proudly <strong>Locally Owned</strong></div>
         <div>⭐ Home to <strong>Award-Winning Staff</strong></div>
       </div>
-      <div class="cta-button">Get Started Today And Get Your First Month Free!</div>
+      <div class="cta-button">Join FitClub Today</div>
     </div>
   </div>
 
