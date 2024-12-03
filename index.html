@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FitClub Promotional Banner</title>
+  <title>FitClub Holiday Promotional Banner</title>
 
   <!-- Include Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
@@ -39,17 +39,39 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('YOUR_BACKGROUND_IMAGE_URL_HERE');
+      background-image: url('YOUR_HOLIDAY_BACKGROUND_IMAGE_URL_HERE');
       background-size: cover;
       background-position: center;
-      filter: brightness(0.7); /* Darken image for text contrast */
+      filter: brightness(0.6); /* Darken image for text contrast */
       z-index: 0;
+    }
+
+    /* Overlay (Optional Snow Effect) */
+    .snowflakes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      font-size: 1em;
+      color: #fff;
+      opacity: 0.8;
+      user-select: none;
+      animation: fall linear infinite;
     }
 
     /* Content Wrapper */
     .banner-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -91,10 +113,21 @@
       cursor: pointer;
       text-decoration: none;
       transition: background-color 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     }
 
     .cta-button:hover {
       background-color: #cc0000;
+    }
+
+    /* Keyframes for Snowflake Animation */
+    @keyframes fall {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      100% {
+        transform: translateX(100px) translateY(100vh);
+      }
     }
 
     /* Responsive Design */
@@ -130,10 +163,21 @@
     <!-- Background Image -->
     <div class="banner-background"></div>
 
+    <!-- Snowflakes Effect -->
+    <div class="snowflakes" aria-hidden="true">
+      <!-- Generate snowflakes -->
+      <!-- You can copy the snowflake div multiple times to create more flakes -->
+      <div class="snowflake">❄️</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <!-- ... -->
+    </div>
+
     <!-- Content -->
     <div class="banner-content">
-      <div class="main-message">Your Journey to a Healthier You Starts Here!</div>
+      <div class="main-message">Make This Holiday Season Healthier with FitClub!</div>
       <div class="highlights">
+        <div>🎁 Join Now and Start Your Fitness Journey</div>
         <div>🏆 Voted <strong>Best in Springfield</strong></div>
         <div>❤️ Proudly <strong>Locally Owned</strong></div>
         <div>⭐ Home to <strong>Award-Winning Staff</strong></div>
