@@ -46,7 +46,7 @@
       z-index: 0;
     }
 
-    /* Overlay (Optional Snow Effect) */
+    /* Snowflakes Effect */
     .snowflakes {
       position: absolute;
       top: 0;
@@ -60,12 +60,30 @@
     .snowflake {
       position: absolute;
       top: -10%;
-      left: 50%;
       font-size: 1em;
       color: #fff;
       opacity: 0.8;
       user-select: none;
-      animation: fall linear infinite;
+      animation-name: fall;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    /* Snowflake Sizes */
+    .snowflake.small {
+      font-size: 1em;
+      animation-duration: 10s;
+    }
+
+    /* Keyframes for Snowflake Animation */
+    @keyframes fall {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      100% {
+        transform: translateX(100px) translateY(100vh);
+      }
     }
 
     /* Content Wrapper */
@@ -120,16 +138,6 @@
       background-color: #cc0000;
     }
 
-    /* Keyframes for Snowflake Animation */
-    @keyframes fall {
-      0% {
-        transform: translateX(0) translateY(0);
-      }
-      100% {
-        transform: translateX(100px) translateY(100vh);
-      }
-    }
-
     /* Responsive Design */
     @media (max-width: 768px) {
       .main-message {
@@ -165,12 +173,17 @@
 
     <!-- Snowflakes Effect -->
     <div class="snowflakes" aria-hidden="true">
-      <!-- Generate snowflakes -->
-      <!-- You can copy the snowflake div multiple times to create more flakes -->
-      <div class="snowflake">❄️</div>
-      <div class="snowflake">❅</div>
-      <div class="snowflake">❆</div>
-      <!-- ... -->
+      <!-- Only white snowflakes with class "snowflake small" -->
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
+      <div class="snowflake small">❄️</div>
     </div>
 
     <!-- Content -->
