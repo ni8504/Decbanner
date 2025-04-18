@@ -2,121 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FitClub Holiday Promotional Banner</title>
+  <title>FitClub Spring Promotional Banner</title>
 
-  <!-- Include Google Fonts -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset default margins and paddings */
+    /* ---------- RESET ---------- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Body Styling */
     html, body {
       width: 100%;
       height: 100%;
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* Banner Container */
+    /* ---------- CONTAINER ---------- */
     .banner-container {
       position: relative;
       width: 100%;
-      min-height: 100vh; /* Changed from height to min-height */
-      overflow: hidden;
-      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      display: flex; /* Added flex display */
-      align-items: center; /* Vertically centers content */
-      justify-content: center; /* Horizontally centers content */
+      overflow: hidden;
+      color: #044d29; /* deep green for spring vibe */
     }
 
-    /* Background Image */
+    /* ---------- BACKGROUND ---------- */
     .banner-background {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://www.fitclub.net/sites/ob-143.app.sitewright.io/files/image/2024-09/west%20weights2%20%281%29.JPG');
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.6); /* Darken image for text contrast */
+      inset: 0;
+      /* Soft spring gradient – swap for photo if preferred */
+      background: linear-gradient(135deg, #dfffe3 0%, #c2e9fb 100%);
       z-index: 0;
     }
 
-    /* Snowflakes Effect */
-    .snowflakes {
+    /* Optional: overlay subtle floral pattern */
+    .banner-background::after {
+      content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;
+      filter: blur(2px);
+    }
+
+    /* ---------- FALLING PETALS EFFECT ---------- */
+    .petals {
+      position: absolute;
+      inset: 0;
       pointer-events: none;
       z-index: 1;
     }
 
-    .snowflake {
+    .petal {
       position: absolute;
       top: -10%;
-      font-size: 1em;
-      color: #fff;
-      opacity: 0.8;
       user-select: none;
       animation-name: fall;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
+      transform-origin: center;
     }
 
-    /* Keyframes for Snowflake Animation */
     @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-      }
+      0%   { transform: translateY(0)   rotate(0deg);   }
+      100% { transform: translateY(110vh) rotate(360deg); }
     }
 
-    /* Content Wrapper */
+    /* ---------- CONTENT ---------- */
     .banner-content {
       position: relative;
       z-index: 2;
-      padding: 20px;
       max-width: 800px;
-      width: 100%;
+      padding: 20px;
     }
 
-    /* Main Message */
     .main-message {
       font-size: 3em;
       margin-bottom: 0.5em;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      text-shadow: 2px 2px 6px rgba(255,255,255,0.7);
       padding: 0 20px;
-      word-wrap: break-word;
     }
 
-    /* Highlights */
     .highlights {
       font-size: 1.5em;
       margin-bottom: 1em;
       line-height: 1.4;
       padding: 0 20px;
     }
+    .highlights div { margin-bottom: 0.5em; }
 
-    .highlights div {
-      margin-bottom: 0.5em;
-    }
-
-    /* Call to Action Button */
     .cta-button {
       display: inline-block;
       padding: 15px 30px;
-      background-color: #ff0000;
+      background-color: #00b894; /* spring green */
       color: #fff;
       text-transform: uppercase;
       font-size: 1.2em;
@@ -125,91 +113,72 @@
       border-radius: 5px;
       cursor: default;
       text-decoration: none;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      box-shadow: 0 0 10px rgba(0, 184, 148, 0.6);
       margin-bottom: 20px;
     }
 
-    /* Responsive Design */
+    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 768px) {
-      .main-message {
-        font-size: 2em; /* Reduced font size */
-      }
-      .highlights {
-        font-size: 1.2em; /* Reduced font size */
-      }
-      .cta-button {
-        font-size: 1em; /* Reduced font size */
-        padding: 12px 25px;
-      }
+      .main-message { font-size: 2em; }
+      .highlights   { font-size: 1.2em; }
+      .cta-button   { font-size: 1em;   padding: 12px 25px; }
     }
 
     @media (max-width: 480px) {
-      .main-message {
-        font-size: 1.5em; /* Further reduced font size */
-      }
-      .highlights {
-        font-size: 1em; /* Further reduced font size */
-      }
-      .cta-button {
-        font-size: 0.9em; /* Further reduced font size */
-        padding: 10px 20px;
-      }
+      .main-message { font-size: 1.5em; }
+      .highlights   { font-size: 1em; }
+      .cta-button   { font-size: 0.9em; padding: 10px 20px; }
     }
   </style>
 </head>
 <body>
   <div class="banner-container">
-    <!-- Background Image -->
+    <!-- Background -->
     <div class="banner-background"></div>
 
-    <!-- Snowflakes Effect -->
-    <div class="snowflakes" aria-hidden="true">
-      <!-- Snowflakes will be generated by JavaScript -->
-    </div>
+    <!-- Petals -->
+    <div class="petals" aria-hidden="true"></div>
 
     <!-- Content -->
     <div class="banner-content">
-      <div class="main-message">Make 2025 your best year yet with FitClub!</div>
+      <div class="main-message">Spring Into Fitness with FitClub!</div>
       <div class="highlights">
-        <div>🎁 Join Now and Start Your Fitness Journey</div>
+        <div>🌸 Join Now &amp; Bloom into a Healthier You</div>
         <div>🏆 Voted <strong>Best in Springfield</strong></div>
-        <div>❤️ Proudly <strong>Locally Owned</strong></div>
-        <div>⭐ Home to <strong>Award-Winning Staff</strong></div>
+        <div>💚 Proudly <strong>Locally Owned</strong></div>
+        <div>⭐ Home to <strong>Award‑Winning Staff</strong></div>
       </div>
-      <div class="cta-button">Start Today for Just $20!!</div>
+      <div class="cta-button">Start Today for Just $20!</div>
     </div>
   </div>
 
-  <!-- JavaScript to Generate Snowflakes -->
+  <!-- JAVASCRIPT: generate petals -->
   <script>
-    const snowflakeContainer = document.querySelector('.snowflakes');
-    const snowflakeCount = 50; // Adjust the number of snowflakes
+    const petalContainer = document.querySelector('.petals');
+    const petalCount = 45; // tweak for more/less petals
 
-    for (let i = 0; i < snowflakeCount; i++) {
-      const snowflake = document.createElement('div');
-      snowflake.classList.add('snowflake');
-      snowflake.textContent = '❄️';
+    for (let i = 0; i < petalCount; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.textContent = '🌸';
 
-      // Randomize size
-      const size = Math.random() * 1.5 + 0.5; // Sizes between 0.5em and 2em
-      snowflake.style.fontSize = size + 'em';
+      // randomise size
+      const size = Math.random() * 1.2 + 0.6; // 0.6–1.8em
+      petal.style.fontSize = size + 'em';
 
-      // Randomize position
-      snowflake.style.left = Math.random() * 100 + '%';
+      // random horizontal start position
+      petal.style.left = Math.random() * 100 + '%';
 
-      // Randomize animation duration
-      const duration = Math.random() * 10 + 5; // Durations between 5s and 15s
-      snowflake.style.animationDuration = duration + 's';
+      // random animation duration & delay
+      const duration = Math.random() * 8 + 7; // 7–15s
+      const delay    = Math.random() * 10;    // 0–10s
+      petal.style.animationDuration = duration + 's';
+      petal.style.animationDelay    = delay + 's';
 
-      // Randomize animation delay
-      snowflake.style.animationDelay = Math.random() * 10 + 's';
+      // random opacity
+      petal.style.opacity = Math.random() * 0.5 + 0.5;
 
-      // Randomize opacity
-      const opacity = Math.random() * 0.5 + 0.5; // Opacity between 0.5 and 1
-      snowflake.style.opacity = opacity;
-
-      // Append to container
-      snowflakeContainer.appendChild(snowflake);
+      petalContainer.appendChild(petal);
     }
   </script>
 </body>
